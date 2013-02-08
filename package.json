@@ -1,0 +1,23 @@
+{
+  "name": "Tavernkeeper",
+  "version": "0.0.01",
+  "description": "A game about taverns",
+  "main": "grunt.js",
+  "dependencies": {
+    "express": "~3.1.0",
+    "grunt": "~0.3.17",
+    "grunt-contrib-coffee": "~0.3.2",
+    "grunt-reload": "~0.2.0",
+    "jade": "~0.28.1",
+    "mongoose": "~3.5.5",
+    "nib": "~0.9.1",
+    "stylus": "~0.32.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "Evan Hensleigh & Adam Gardner",
+  "license": "None"
+}

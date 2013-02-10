@@ -5,10 +5,10 @@ stylus = require 'stylus'
 nib = require 'nib'
 Database = require './server/database'
 
-Tavern = require './models/tavern'
-Quest = require './models/quest'
-Hero = require './models/hero'
-Room = require './models/room'
+Tavern = require './server/models/tavern'
+Quest = require './server/models/quest'
+Hero = require './server/models/hero'
+Room = require './server/models/room'
 
 class Server
     stylusCompiled = (str, path) ->
@@ -41,6 +41,22 @@ class Server
     setupRoutes : ->
         @app.get '/', (req, res) ->
             res.render 'index'
+
+        @app.get '/taverns', (req, res) ->
+            Tavern.find (err, taverns) ->
+                res.send taverns
+
+        @app.get '/heroes', (req, res) ->
+            Hero.find (err, heroes) ->
+                res.send heroes
+
+        @app.get '/rooms', (req, res) ->
+            Room.find (err, rooms) ->
+                res.send rooms
+
+        @app.get '/quests', (req, res) ->
+            Quest.find (err, quests) ->
+                res.send quests
 
     start : ->
         @server = http.createServer(@app).listen @app.get('port'), =>

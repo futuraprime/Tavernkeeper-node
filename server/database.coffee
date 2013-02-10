@@ -1,8 +1,8 @@
 mongoose = require 'mongoose'
-Tavern = require './schema/tavern'
-Quest = require './schema/quest'
-Hero = require './schema/hero'
-Room = require './schema/room'
+Tavern = require './models/tavern'
+Quest = require './models/quest'
+Hero = require './models/hero'
+Room = require './models/room'
 
 database = module.exports = class Database    
     constructor: ->

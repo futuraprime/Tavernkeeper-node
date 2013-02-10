@@ -1,8 +1,11 @@
 mongoose = require 'mongoose'
 
 tavern = new mongoose.Schema
-    'rooms' : Number
-    'heroes' : [
+    'name' : String
+    '_rooms' : [
+        _id: Number
+    ]
+    '_heroes' : [
         _id: Number
     ]
     'room_limit' : Number

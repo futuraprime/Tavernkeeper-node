@@ -8,9 +8,10 @@ define [
     template
 ) ->
     class Intro extends BaseView
+        el : 'body' # this is a view that takes over the whole screen
+
         render : ->
             @$el.html template
                 taverns : [
                     name : 'bleep'
                 ]
-            @el

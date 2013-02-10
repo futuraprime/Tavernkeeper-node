@@ -9,16 +9,15 @@ define [
     $
     IntroView
 ) ->
-    class App extends BaseView
+    class App
         constructor : ->
-            super
             console.log 'starting app'
 
             @intro = new IntroView
 
-            $ =>
-                @render()
+            $ @startup
 
-        render : ->
-            $('body').empty().append(@el)
-            @el.appendChild @intro.render()
+        startup : =>
+            console.log 'starting up'
+            @intro.render()
+

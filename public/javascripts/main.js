@@ -2,7 +2,7 @@ requirejs.config({
     baseUrl: '/javascripts/app/',
     paths : {
         'tmpl' : '../../templates',
-        'backbone' : '../lib/backbone-min',
+        'backbone' : '../lib/backbone',
         'underscore' : '../lib/underscore-min',
         'jade' : '../lib/jade',
         'jquery' : '../lib/jquery-1.9.1.min'

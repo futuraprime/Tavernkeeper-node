@@ -42,19 +42,19 @@ class Server
         @app.get '/', (req, res) ->
             res.render 'index'
 
-        @app.get '/api/taverns', (req, res) ->
+        @app.get '/api/tavern', (req, res) ->
             Tavern.find (err, taverns) ->
                 res.send taverns
 
-        @app.get '/api/heroes', (req, res) ->
+        @app.get '/api/hero', (req, res) ->
             Hero.find (err, heroes) ->
                 res.send heroes
 
-        @app.get '/api/rooms', (req, res) ->
+        @app.get '/api/room', (req, res) ->
             Room.find (err, rooms) ->
                 res.send rooms
 
-        @app.get '/api/quests', (req, res) ->
+        @app.get '/api/quest', (req, res) ->
             Quest.find (err, quests) ->
                 res.send quests
 

@@ -19,5 +19,5 @@ define [
 
         startup : =>
             console.log 'starting up'
-            @intro.render()
+            # @intro.render()
 

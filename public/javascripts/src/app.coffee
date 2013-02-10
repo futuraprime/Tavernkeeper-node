@@ -9,15 +9,15 @@ define [
     $
     IntroView
 ) ->
-    class App
+    class App extends Backbone.Router
         constructor : ->
+            super
             console.log 'starting app'
-
-            @intro = new IntroView
 
             $ @startup
 
         startup : =>
-            console.log 'starting up'
-            # @intro.render()
+            console.log 'starting views'
+            @intro = new IntroView
+
 

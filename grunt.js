@@ -31,7 +31,7 @@ module.exports = function(grunt) {
         tasks : 'reload'
       },
       templates : {
-        files : 'templates/**/*.jade',
+        files : 'public/templates/**/*.jade',
         tasks : 'reload'
       },
       views : {

@@ -3,4 +3,7 @@ h2 Active taverns
 ul
     each tavern in taverns
         li #{tavern.name}
-a(href='#') Start a new tavern
+h3 Start a new tavern
+form.new-tavern
+    input(id='new_tavern_name', placeholder="tavern name", name="name")
+

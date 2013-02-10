@@ -4,15 +4,19 @@ To get started, first install nodemon globally:
 
     npm install -g nodemon
 
-Then install the dependencies here by cd-ing into the directory and running
+Then install the dependencies here by cd-ing into the directory and running:
 
     npm install
 
-Start the server by running
+If mongo isn't installed install it (`brew install mongo`). Run mongo with:
+    
+    mongod
+
+Start the server by running:
     
     nodemon server.coffee
 
-and then switch on reloading awesomeness with
+and then switch on reloading awesomeness with:
 
     grunt
 

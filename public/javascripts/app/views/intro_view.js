@@ -1,0 +1,31 @@
+(function() {
+  var __hasProp = {}.hasOwnProperty,
+    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+
+  define(['backbone', 'views/base_view', 'jade!tmpl/intro'], function(Backbone, BaseView, template) {
+    var Intro;
+    return Intro = (function(_super) {
+
+      __extends(Intro, _super);
+
+      function Intro() {
+        return Intro.__super__.constructor.apply(this, arguments);
+      }
+
+      Intro.prototype.render = function() {
+        this.$el.html(template({
+          taverns: [
+            {
+              name: 'bleep'
+            }
+          ]
+        }));
+        return this.el;
+      };
+
+      return Intro;
+
+    })(BaseView);
+  });
+
+}).call(this);

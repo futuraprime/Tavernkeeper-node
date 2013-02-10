@@ -2,7 +2,9 @@ h1 Hello!
 h2 Active taverns
 ul
     each tavern in taverns
-        li #{tavern.name}
+        li #{tavern.name} 
+            a.visit-tavern(href="#", data-id="#{tavern._id}") visit 
+            a.delete-tavern(href='#', data-id="#{tavern._id}") remove
 h3 Start a new tavern
 form.new-tavern
     input(id='new_tavern_name', placeholder="tavern name", name="name")

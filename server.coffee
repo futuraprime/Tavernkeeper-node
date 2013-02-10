@@ -42,9 +42,21 @@ class Server
         @app.get '/', (req, res) ->
             res.render 'index'
 
+        # taverns!
         @app.get '/api/tavern', (req, res) ->
             Tavern.find (err, taverns) ->
                 res.send taverns
+
+        @app.post '/api/tavern', (req, res) ->
+            tavern = new Tavern(name: req.body.name)
+            tavern.save (err) ->
+                console.log 'new tavern created' unless err
+            res.send tavern
+
+        @app.delete '/api/tavern/:id', (req, res) ->
+            Tavern.findById req.params.id, (err, tavern) ->
+                tavern.remove (err) ->
+                    console.log 'removed tavern' unless (err)
 
         @app.get '/api/hero', (req, res) ->
             Hero.find (err, heroes) ->
@@ -57,12 +69,6 @@ class Server
         @app.get '/api/quest', (req, res) ->
             Quest.find (err, quests) ->
                 res.send quests
-
-        @app.post '/api/tavern', (req, res) ->
-            tavern = new Tavern(name: req.body.name)
-            tavern.save (err) ->
-                console.log 'new tavern created' unless err
-            res.send tavern
 
     start : ->
         @server = http.createServer(@app).listen @app.get('port'), =>

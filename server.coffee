@@ -3,7 +3,12 @@ http = require 'http'
 path = require 'path'
 stylus = require 'stylus'
 nib = require 'nib'
-database = require './server/database'
+Database = require './server/database'
+
+Tavern = require './models/tavern'
+Quest = require './models/quest'
+Hero = require './models/hero'
+Room = require './models/room'
 
 class Server
     stylusCompiled = (str, path) ->
@@ -29,7 +34,7 @@ class Server
             app.use express.logger 'dev'
             app.use express.errorHandler()
 
-        @database = new database()
+        @database = new Database()
 
         @setupRoutes()
 

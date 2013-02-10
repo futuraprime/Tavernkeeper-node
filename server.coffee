@@ -42,21 +42,27 @@ class Server
         @app.get '/', (req, res) ->
             res.render 'index'
 
-        @app.get '/taverns', (req, res) ->
+        @app.get '/api/taverns', (req, res) ->
             Tavern.find (err, taverns) ->
                 res.send taverns
 
-        @app.get '/heroes', (req, res) ->
+        @app.get '/api/heroes', (req, res) ->
             Hero.find (err, heroes) ->
                 res.send heroes
 
-        @app.get '/rooms', (req, res) ->
+        @app.get '/api/rooms', (req, res) ->
             Room.find (err, rooms) ->
                 res.send rooms
 
-        @app.get '/quests', (req, res) ->
+        @app.get '/api/quests', (req, res) ->
             Quest.find (err, quests) ->
                 res.send quests
+
+        @app.post '/api/tavern', (req, res) ->
+            tavern = new Tavern(name: req.body.name)
+            tavern.save (err) ->
+                console.log 'new tavern created' unless err
+            res.send tavern
 
     start : ->
         @server = http.createServer(@app).listen @app.get('port'), =>

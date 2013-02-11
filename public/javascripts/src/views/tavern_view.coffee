@@ -30,3 +30,8 @@ define [
                 type : "Roomy Room"
                 heroes_allowed : 2
             room.save()
+
+        remove : =>
+            super
+            @model.clear()
+            @model.destroy()

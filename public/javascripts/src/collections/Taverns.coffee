@@ -1,6 +1,6 @@
 define [
     'backbone'
-    'models/Tavern'
+    'models/CollectableTavern'
 ], (
     Backbone
     Tavern

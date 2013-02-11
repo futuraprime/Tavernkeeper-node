@@ -3,7 +3,7 @@ h2 Active taverns
 ul
     each tavern in taverns
         li #{tavern.name} 
-            a.visit-tavern(href="#", data-id="#{tavern._id}") visit 
+            a.visit-tavern(href="#tavern/#{tavern._id}", data-id="#{tavern._id}") visit 
             a.delete-tavern(href='#', data-id="#{tavern._id}") remove
 h3 Start a new tavern
 form.new-tavern

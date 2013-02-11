@@ -24,7 +24,6 @@ define [
 
         events : 
             'submit form.new-tavern' : 'createTavern'
-            'click .visit-tavern' : 'showTavern'
             'click .delete-tavern' : 'removeTavern'
 
         render : =>
@@ -38,14 +37,6 @@ define [
             # tavern = new Tavern data
             tavern = @taverns.create data,
                 wait: true
-
-        # this method only necessary until routing is set up
-        showTavern : (evt) ->
-            evt.preventDefault()
-            tavern = @taverns.get(evt.currentTarget.dataset.id)
-            tavern_view = new TavernView(tavern)
-            @remove()
-            tavern_view.render()
 
         removeTavern : (evt) ->
             evt.preventDefault()

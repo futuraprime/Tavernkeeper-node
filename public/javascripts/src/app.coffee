@@ -1,23 +1,38 @@
 define [
     'backbone'
-    'views/base_view'
     'jquery'
+    'models/Tavern'
     'views/intro_view'
+    'views/tavern_view'
 ], (
     Backbone
-    BaseView
     $
+    Tavern
     IntroView
+    TavernView
 ) ->
     class App extends Backbone.Router
+        routes :
+            'tavern/:id' : 'show_tavern'
+            '*path' : 'startup'
+
         constructor : ->
             super
             console.log 'starting app'
 
-            $ @startup
+        _clearPriorView : =>
+            @view?.remove()
 
         startup : =>
+            @_clearPriorView()
             console.log 'starting views'
-            @intro = new IntroView
+            @view = new IntroView
 
-
+        show_tavern : (id) =>
+            @_clearPriorView()
+            tavern = new Tavern
+                _id : id
+            tavern.fetch
+                success : =>
+                    @view = new TavernView tavern
+                    @view.render()

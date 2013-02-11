@@ -25,6 +25,6 @@ requirejs(
     ['backbone', 'app'],
     function(Backbone, App) {
         window.app = new App();
-        Backbone.history.start({pushState: true, hashChange: false, silent: true});
+        Backbone.history.start();
     }
 );

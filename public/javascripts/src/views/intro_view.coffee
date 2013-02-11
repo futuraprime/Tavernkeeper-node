@@ -34,7 +34,6 @@ define [
         createTavern : (evt) ->
             evt.preventDefault()
             data = { name: $(evt.target).find("[name=name]").val()}
-            # tavern = new Tavern data
             tavern = @taverns.create data,
                 wait: true
 
@@ -47,4 +46,5 @@ define [
 
         remove : ->
             super
+            @taverns = null
             @stopListening()

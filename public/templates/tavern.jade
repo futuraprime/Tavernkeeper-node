@@ -1,11 +1,10 @@
 h1 TAVERN #{name}
 h2 Rooms
 ul
-    li Room
-    li Room
-    li Room
+    each room in rooms
+        li Name: #{room.name}
     li
-        a(href="#") Add a room
+        a.create-room(href="#") Add a room
 h2 Heroes
 ul
     li Hero

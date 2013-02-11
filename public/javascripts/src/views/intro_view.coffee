@@ -43,7 +43,6 @@ define [
         showTavern : (evt) ->
             evt.preventDefault()
             tavern = @taverns.get(evt.currentTarget.dataset.id)
-            console.log tavern
             tavern_view = new TavernView(tavern)
             @remove()
             tavern_view.render()

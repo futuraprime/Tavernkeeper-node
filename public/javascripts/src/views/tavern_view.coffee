@@ -10,6 +10,8 @@ define [
     class TavernView extends BaseView
         constructor : (@model) ->
             super
+            @listenTo @model, 'change', @render
+            @model.fetch()
 
         render : =>
             @$el.html template @model.toJSON()

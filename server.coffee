@@ -47,17 +47,34 @@ class Server
             Tavern.find (err, taverns) ->
                 res.send taverns
 
+        @app.get '/api/tavern/:id', (req, res) ->
+            Tavern.findById(req.params.id)
+            .populate('heroes')
+            .populate('rooms')
+            .exec (err, tavern) ->
+                console.log 'got tavern #{tavern.name}' unless err
+                res.send tavern
+
         @app.post '/api/tavern', (req, res) ->
             tavern = new Tavern(name: req.body.name)
             tavern.save (err) ->
                 console.log 'new tavern created' unless err
             res.send tavern
 
+        @app.put '/api/tavern/:id', (req, res) ->
+            Tavern.findById req.params.id, (err, tavern) ->
+                tavern.name = req.body.name
+                tavern.heroes = req.body.heroes
+                tavern.rooms = req.body.rooms
+                tavern.save (err) ->
+                    console.log 'updated tavern #{tavern.name}' unless err
+
         @app.delete '/api/tavern/:id', (req, res) ->
             Tavern.findById req.params.id, (err, tavern) ->
                 tavern.remove (err) ->
                     console.log 'removed tavern' unless (err)
 
+        # heroes
         @app.get '/api/hero', (req, res) ->
             Hero.find (err, heroes) ->
                 res.send heroes

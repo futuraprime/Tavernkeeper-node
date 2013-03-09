@@ -1,4 +1,6 @@
 assert = require "assert"
+mongoose = require 'mongoose'
+mongoose.connect('mongodb://localhost/tavernkeeper_test')
 #assert = require("chai").assert
 #expect = require("chai").expect
 

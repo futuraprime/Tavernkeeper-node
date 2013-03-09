@@ -1,0 +1,37 @@
+GIT
+  remote: git://github.com/kanzeon/guard-mocha-node.git
+  revision: a69d3ebd6949c755fa5c99dc26782a8959279764
+  specs:
+    guard-mocha-node (0.0.2)
+      guard (>= 0.4)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    coderay (1.0.9)
+    growl (1.0.3)
+    guard (1.6.2)
+      listen (>= 0.6.0)
+      lumberjack (>= 1.0.2)
+      pry (>= 0.9.10)
+      terminal-table (>= 1.4.3)
+      thor (>= 0.14.6)
+    listen (0.7.2)
+    lumberjack (1.0.2)
+    method_source (0.8.1)
+    pry (0.9.12)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
+    rb-fsevent (0.9.2)
+    slop (3.4.3)
+    terminal-table (1.4.5)
+    thor (0.17.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  growl
+  guard-mocha-node!
+  rb-fsevent

@@ -1,6 +1,10 @@
-assert = require "assert"
 mongoose = require 'mongoose'
-mongoose.connect('mongodb://localhost/tavernkeeper_test')
+conn = mongoose.connect('mongodb://localhost/tavernkeeper_test') 
+
+# Clear the test database for next time
+after ->
+  conn.connection.db.dropDatabase
+
 #assert = require("chai").assert
 #expect = require("chai").expect
 
